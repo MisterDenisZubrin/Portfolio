@@ -1,0 +1,1203 @@
+$hovercolor: #c7b299;
+$darkcolor: #555555;
+$semidarkcolor: #8c8c8c;
+
+@mixin text ($family, $size, $height, $weight, $color) {
+    font-family: $family;
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    color: $color;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(../fonts/montserrat/montserrat-regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(../fonts/montserrat/montserrat-bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(../fonts/montserrat/montserrat-light.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(../fonts/montserrat/montserrat-extralight.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url(../fonts/raleway/raleway-regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url(../fonts/raleway/raleway-medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url(../fonts/raleway/raleway-semibold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url(../fonts/raleway/raleway-bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url(../fonts/raleway/raleway-extrabold.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button {
+    background-color: #998675;
+    padding: 20px 38px;
+    border-radius: 3px;
+
+    &__text {
+        text-transform: uppercase;
+        @include text('raleway', 14px, 23px, 700, white);
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.header {
+    background-image: url(../img/bg_header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 1024px;
+    padding: 40px 0;
+    color: white;
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        text-transform: capitalize;
+        @include text('montserrat', 14px, 1.2, 300, white);
+
+    }
+
+    &__item {
+        margin: 0 30px 0 0;
+
+        &:hover {
+            color: $hovercolor;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        display: block;
+        color: white;
+        background-color: inherit;
+        border: none;
+        font-size: 24px;
+        margin: 0 30px 0 0;
+
+        &:hover {
+            transform: scale(1.2);
+            color: $hovercolor;
+        }
+
+    }
+
+}
+
+.burger {
+    display: none;
+    margin: 0 20px 0 0;
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        z-index: 3;
+    }
+
+    &__stripe {
+        display: block;
+        width: 50px;
+        height: 5px; 
+        background-color: #fff;
+        z-index: 3;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 50px;
+            top: -10px;
+            background-color: #fff;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 50px;
+            top: 10px;
+            background-color: #fff;
+        }
+
+    }
+
+    &__list {
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        background-color: $darkcolor;
+        color: #fff;
+        z-index: 2;
+        cursor: pointer;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+
+    }
+
+    &__item {
+        list-style-type: none;
+        width: 30%;
+        padding: 10px;
+        box-sizing: border-box;
+        &:hover {
+            font-size: 1.2em;
+        }
+    }
+}
+
+#burger-checkbox {
+    display: none;
+
+    &:checked~.burger__list {
+        display: block;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    &:hover &__svg {
+        fill: $hovercolor;
+    }
+
+    &:hover &__label {
+        color: $hovercolor;
+    }
+
+    &__svg {
+        fill: white;
+    }
+
+    &__label {
+        text-transform: capitalize;
+        @include text('raleway', 34px, 1.2, 400, white);
+    }
+
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 665px;
+    }
+
+    &__subheading {
+        @include text('raleway', 36px, 1.2, 500, white);
+    }
+
+    &__heading {
+        @include text('raleway', 52px, 1.2, 800, white);
+    }
+
+    &__paragraph {
+        @include text('montserrat', 16px, 24px, 300, white);
+        text-align: center;
+        margin: 20px 0 50px 0;
+    }
+
+    &__arrow {
+        fill: white;
+
+        &:hover {
+            fill: $hovercolor;
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__circle {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: grey;
+        margin: 0 5px;
+
+        &:hover {
+            outline: 2px solid yellow;
+            background-color: #000;
+        }
+    }
+}
+
+.pluses {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
+
+.plus {
+    width: 376px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover &__name {
+        color: $hovercolor;
+    }
+
+    &:hover &__icon {
+        fill: $hovercolor;
+    }
+
+    &:hover &__text::after {
+        background-color: $hovercolor;
+    }
+
+    &__icon {
+        display: block;
+        margin: 0 auto 15px;
+        fill: $darkcolor;
+    }
+
+    &__name {
+        text-align: center;
+        @include text('montserrat', 22px, 1.2, 600, $darkcolor);
+
+    }
+
+    &__text {
+        text-align: center;
+        @include text('montserrat', 14px, 24px, 300, $semidarkcolor);
+        position: relative;
+
+        &::after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 70px;
+            height: 3px;
+            background-color: #f1eee9;
+            bottom: -30px;
+            left: 120px;
+        }
+    }
+}
+
+.realization-wrapper {
+    background-color: #fbfaf8;
+}
+
+.realization {
+    padding: 80px 0 0 0;
+    box-sizing: border-box;
+
+    &__text {
+        width: 580px;
+        margin: 0 auto;
+    }
+
+    &__heading {
+        display: block;
+        text-align: center;
+        @include text('raleway', 30px, 1.2, 600, $darkcolor);
+    }
+
+    &__caption {
+        text-align: center;
+        @include text('raleway', 16px, 28px, 300, $semidarkcolor);
+    }
+
+    &__pictures {
+        height: 482px;
+        margin: 30px 0 0 0;
+        background-repeat: no-repeat;
+        background-size: 65%, 60%, 60%;
+        background-image:
+            url(../img/realization_2.png),
+            url(../img/realization_1.png),
+            url(../img/realization_3.png);
+        background-position: center, bottom left, bottom right;
+    }
+}
+
+.aside {
+    height: 150px;
+    background-color: #f4f5f8;
+    background-image: linear-gradient(90.0deg, #211b19 0%, #4e3427 100%);
+    display: flex;
+    align-items: center;
+}
+
+.advertisment {
+    display: flex;
+    justify-content: space-between;
+
+    &__text {
+        max-width: 50%;
+    }
+
+    &__heading {
+        display: block;
+        margin: 0 0 8px 0;
+        text-transform: capitalize;
+        @include text('raleway', 28px, 1.2, 300, white);
+    }
+
+    &__company {
+        color: $hovercolor;
+    }
+
+    &__caption {
+        @include text('montserrat', 18px, 1.2, 300, #615855);
+    }
+
+}
+
+.projects {
+    padding: 80px 0;
+
+    &__heading {
+        text-transform: capitalize;
+        @include text('raleway', 30px, 1.2, 600, $darkcolor);
+        text-align: center;
+    }
+
+    &__description {
+        @include text('montserrat', 16px, 28px, 300, $semidarkcolor);
+        display: block;
+        text-align: center;
+    }
+
+    &__categories {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+    }
+
+    &__category {
+        padding: 10px 24px;
+        box-sizing: border-box;
+        margin: 0 10px 0 0;
+        border: 1px solid #ebebeb;
+        border-radius: 3px;
+        color: $semidarkcolor;
+        text-transform: capitalize;
+        text-align: center;
+
+        &:hover {
+            background-color: #998675;
+            color: white;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        margin: 40px 0;
+    }
+
+    &__button {
+        display: block;
+        margin: 0 auto;
+        border: none;
+    }
+}
+
+.project {
+    margin: 0 0 30px 0;
+    flex-basis: 370px;
+    background-color: #fbfaf8;
+
+    &__text {
+        background-color: #fbfaf8;
+        padding: 30px;
+        box-sizing: border-box;
+        position: relative;
+
+        &::before {
+            display: block;
+            position: absolute;
+            content: '';
+            top: -38px;
+            left: 19px;
+            border: 20px solid transparent;
+            border-bottom: 15px solid #fbfaf8;
+        }
+    }
+
+    &__name {
+        margin: 0 0 14px 0;
+        @include text('raleway', 20px, 1.2, 500, $hovercolor);
+    }
+
+    &__description {
+        @include text('montserrat', 14px, 20px, 300, #d1d1d1);
+    }
+
+    &:hover {
+        background-color: #362f2d;
+        opacity: 0.7;
+    }
+
+    &:hover &__text {
+        background-color: #362f2d;
+    }
+
+    &:hover &__text::before {
+        border-bottom: 15px solid #362f2d;
+    }
+
+    &:hover &__name {
+        color: white;
+    }
+
+    &:hover &__description {
+        color: $hovercolor;
+    }
+}
+
+.presentation {
+    background: url(../img/bg_presentation.png) center 100% no-repeat $semidarkcolor;
+    height: 705px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &__text {
+        max-width: 683px;
+    }
+
+    &__play-icon {
+        fill: #fff;
+        background-color: #5c6065;
+        border: 10px solid transparent;
+        opacity: 0.6;
+        border-radius: 50%;
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto 45px;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__heading {
+        @include text('raleway', 30px, 1.2, 500, white);
+        text-transform: capitalize;
+        margin: 0 0 30px 0;
+    }
+
+    &__description {
+        @include text('montserrat', 16px, 28px, 300, white);
+        display: block;
+        margin: 0 0 40px 0;
+    }
+
+    &__duration {
+        @include text('montserrat', 14px, 24px, 400, $hovercolor);
+        display: block;
+    }
+}
+
+.mobile-wrapper {
+    background-color: #fbfaf8;
+}
+
+.mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 695px;
+    padding: 80px 0 0 0;
+    box-sizing: border-box;
+
+    &__image {
+        align-self: flex-end;
+    }
+
+    &__text {
+        margin: 0 0 0 30px;
+    }
+
+    &__heading {
+        @include text('raleway', 30px, 1.2, 600, $darkcolor);
+        margin: 0 0 40px 0;
+    }
+
+    &__paragraph {
+        @include text('montserrat', 16px, 28px, 300, $semidarkcolor);
+    }
+
+    &__advantages-list {
+        list-style-type: none;
+        @include text('montserrat', 16px, 32px, 300, $semidarkcolor);
+        margin: 45px 0 0 100px;
+    }
+
+    &__advantage {
+        position: relative;
+        display: block;
+        margin: 0 0 8px 0;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            background-image: url(../img/list_decoration.png);
+            left: -45px;
+            top: 6px;
+        }
+    }
+}
+
+.statistic {
+    min-height: 300px;
+    background: linear-gradient(to right, #241c1a, #4d3326);
+    color: #fff;
+    padding: 60px 0;
+    box-sizing: border-box;
+
+    &__cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__card {
+        width: 150px;
+        margin: 0 30px;
+        text-align: center;
+    }
+
+    &__icon {
+        fill: $hovercolor;
+    }
+
+    &__number {
+        @include text('montserrat', 48px, 36px, 200, white);
+        display: block;
+        margin: 30px auto 20px;
+    }
+
+    &__unit {
+        @include text('montserrat', 14px, 20px, 300, $hovercolor);
+        text-transform: uppercase;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            margin: 30px auto 0;
+        }
+    }
+}
+
+.posts {
+    padding: 80px 0;
+    box-sizing: border-box;
+
+    &__content {
+        text-align: center;
+    }
+
+    &__heading {
+        @include text('raleway', 30px, 1.2, 600, $darkcolor);
+        text-transform: capitalize;
+    }
+
+    &__description {
+        margin: 30px auto 0;
+        width: 75%;
+        text-align: center;
+        @include text('montserrat', 16px, 28px, 300, $semidarkcolor);
+    }
+
+    &__article-wrap {
+        width: 1200px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 40px auto 30px;
+    }
+
+    &__arrows {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__arrow-icon {
+        display: block;
+        margin: 0 5px;
+        @include text('montserrat', 22px, 22px, 300, $hovercolor);
+        width: 22px;
+        height: 22px;
+        background-image: url(../img/arrow_icon.png);
+        border: none;
+        outline: none;
+        background-color: inherit;
+
+        &:nth-child(1) {
+            transform: rotate(180deg);
+
+            &:hover {
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.article {
+    width: 370px;
+    min-height: 395px;
+    margin: 0 30px 0 0;
+    text-align: left;
+
+    &:nth-child(1) &__background {
+        background-image: url(../img/post_1.png);
+    }
+
+    &:nth-child(2) &__background {
+        background-image: url(../img/post_2.png);
+    }
+
+    &:nth-child(3) &__background {
+        background-image: url(../img/post_3.png);
+    }
+
+    &__background {
+        height: 220px;
+        position: relative;
+    }
+
+    &__date {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+
+
+    }
+
+    &__day {
+        display: block;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #363636;
+        @include text('montserrat', 24px, 20px, 300, white);
+        text-align: center;
+    }
+
+    &__month {
+        display: block;
+        padding: 7px 13px;
+        box-sizing: border-box;
+        background-color: #252525;
+        @include text('raleway', 12px, 20px, 400, white);
+        // Если нужно, подключить шрифт 'Roboto'
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    &__text {
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    &__heading {
+        @include text('raleway', 20px, 1.2, 500, $darkcolor);
+    }
+
+    &__description {
+        @include text('montserrat', 14px, 22px, 300, $semidarkcolor);
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: capitalize;
+        @include text('montserrat', 14px, 20px, 300, $hovercolor);
+    }
+
+    &:hover,
+    &:hover &__background {
+        background-color: #362f2d;
+    }
+
+    &:hover &__day {
+        background-color: $hovercolor;
+    }
+
+    &:hover &__month {
+        background-color: #a48d72;
+    }
+
+    &:hover &__heading {
+        color: $hovercolor;
+    }
+
+    &:hover &__description {
+        color: white;
+    }
+}
+
+.partners {
+    background-image: url(../img/collab_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 489px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__img {
+        margin: 0 45px;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.media {
+    background-color: #191919;
+    padding: 80px 0;
+    box-sizing: border-box;
+
+    &__columns {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__column {
+        width: 270px;
+        margin: 0 20px;
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: capitalize;
+        @include text('montserrat', 14px, 20px, 400, #d1d1d1);
+        display: inline-block;
+        margin: 20px 0 0 0;
+
+        &:hover {
+            color: $hovercolor;
+        }
+    }
+
+    &__comment {
+        margin: 20px 0 0 0;
+
+        &:after {
+            content: "";
+            display: block;
+            height: 2px;
+            margin: 20px 0 0 0;
+            background-color: #252525;
+        }
+
+        &:hover .media__date {
+            color: #fff;
+        }
+
+        &:hover .media__text {
+            color: $hovercolor;
+        }
+    }
+
+    &__text {
+        @include text('montserrat', 14px, 24px, 300, $darkcolor);
+        margin: 30px 0 0 0;
+    }
+
+    &__twitter-link {
+        color: #00bff3;
+    }
+
+    &__outer-link {
+        color: #959595;
+    }
+
+    &__date {
+        @include text('montserrat', 12px, 20px, 300, #363636);
+    }
+
+    &__heading {
+        @include text('raleway', 24px, 1.2, 700, white);
+        text-transform: capitalize;
+    }
+
+    &__widget-wrap {
+        margin: 20px 0 0 0;
+        min-height: 204px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    &__widget {
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.info-wrapper {
+    background-color: #111111;
+}
+
+.info {
+    @include text('montserrat', 13px, 20px, 300, $darkcolor);
+    padding: 45px 0;
+    box-sizing: border-box;
+
+    &__wrap {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__left-group {
+        display: flex;
+    }
+
+    &__text {
+        &_white {
+            color: #959595;
+            text-transform: capitalize;
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+    }
+
+    &__item {
+        position: relative;
+        margin: 0 20px;
+        color: #555555;
+
+        &:before {
+            content: "|";
+            position: absolute;
+            color: #555555;
+            left: -20px;
+        }
+
+
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: #555555;
+
+        &:hover {
+            color: $hovercolor;
+        }
+    }
+}
+
+// Мобильная версия (480px / 576px) - портретный режим 
+
+// Отступы слева-справа = 40px
+// Отступы сверху-снизу = 60px, 48px, 10px
+@media (max-width: 480px) {
+    .container {
+        width: 480px;
+    }
+
+    .header {
+
+        &-wrapper {
+            min-height: 100px;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 0 0 10px;
+        box-sizing: border-box;
+
+        &__list,
+        &__icons {
+            display: none;
+        }
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .header__content,
+    .pagination {
+        display: none;
+    }
+
+    .pluses {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0 0 0;
+        box-sizing: border-box;
+    }
+
+    .plus {
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 0 30px 0;
+
+        &__text::after {
+            left: (376px/2)-35px;
+        }
+    }
+
+    .realization-wrapper {
+        display: none;
+    }
+
+    .aside {
+        display: none;
+    }
+
+    .projects {
+        padding: 0;
+        box-sizing: border-box;
+
+        &__categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            min-height: 120px;
+            align-content: space-around;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        &__category {
+            margin: 0;
+
+            &:nth-child(4) {
+                flex-grow: 2;
+                margin: 0 10px 0 0;
+            }
+
+            &:nth-child(5) {
+                flex-grow: 2;
+            }
+        }
+
+        &__block {
+            margin: 0;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+        }
+
+        &__button {
+            margin: 0 auto 20px;
+        }
+    }
+
+    .mobile {
+        display: flex;
+        flex-direction: column;
+
+        &__text {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__heading {
+            margin: 20px 0;
+        }
+
+        &__paragraph {
+            margin: 0 10px 20px;
+        }
+
+        &__advantages-list {
+            margin: 0;
+        }
+    }
+
+    .posts {
+        padding: 0;
+        box-sizing: border-box;
+
+        &__heading {
+            display: block;
+            margin: 20px 0;
+        }
+
+        &__article-wrap {
+            width: 480px;
+        }
+
+        &__arrows {
+            display: none;
+        }
+    }
+
+    .statistic {
+        display: none;
+    }
+
+    .media {
+        display: none;
+    }
+
+    .partners {
+        &__content {
+            flex-direction: column;
+        }
+
+        &__img {
+            margin: 20px 0;
+        }
+    }
+
+    .info {
+        padding: 0;
+        box-sizing: border-box;
+        min-height: 150px;
+        display: flex;
+        align-items: flex-end;
+
+        &__wrap {
+            min-height: 100px;
+            justify-content: center;
+        }
+
+        &__list {
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        &__item:nth-child(1)::before {
+            display: none;
+        }
+    }
+}
