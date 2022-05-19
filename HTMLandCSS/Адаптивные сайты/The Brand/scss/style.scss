@@ -102,7 +102,7 @@ body {
     &__cart {
         position: relative;
         display: block;
-        margin: 0 0 0 42px;
+        margin: 0 0 0 40px;
 
         &-counter {
             content: '';
@@ -138,7 +138,7 @@ body {
 
     &__icon {
         display: block;
-        height: 2px;
+        height: 2.5px;
         width: 32px;
         background-color: white;
         position: relative;
@@ -149,16 +149,16 @@ body {
             display: block;
             position: absolute;
             background-color: white;
-            height: 2px;
+            height: 2.5px;
             width: 32px;
         }
 
         &::before {
-            top: -14px;
+            top: -12px;
         }
 
         &::after {
-            top: 14px;
+            top: 12px;
         }
     }
 
@@ -724,6 +724,9 @@ body {
         text-decoration: none;
         @include font(300, 14px, 17px, #636363);
         text-transform: uppercase;
+        &::after {
+            content: '/';
+        }
     }
 }
 
@@ -1818,6 +1821,9 @@ body {
     .menu__group {
         min-width: 35px;
     }
+    .menu__search-input:focus {
+        width: 150px;
+    }
 
     .brand__text::before {
         height: 70px;
@@ -1930,6 +1936,13 @@ body {
         padding: 0;
         width: 38px;
     }
+    .filter__list-wrapper {
+        width: 100px;
+        padding: 0;
+    }
+    .filter__list {
+        padding: 16px;
+    }
 
     .filter__name {
         display: none;
@@ -1961,6 +1974,9 @@ body {
 
     .full-product__collection {
         padding: 64px 0 36px;
+        &::after {
+            top: 100px;
+        }
     }
 
     .featured__products_mobile {
