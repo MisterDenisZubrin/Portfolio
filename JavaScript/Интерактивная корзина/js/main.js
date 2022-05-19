@@ -52,7 +52,7 @@ class Item{
                     <h3>${this.product_name}</h3>
                     <p>${this.price} $</p>
                     <button class="buy-btn"
-                    data-id="${this.id_product}"
+                    data-id="${this.id_product}" 
                     data-name="${this.product_name}"
                     data-price="${this.price}">Купить</button>
                 </div>
