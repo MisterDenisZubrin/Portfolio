@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+}
+
+.btn {
+  background-color: #bdbdbd;
+  outline: 1px solid #000;
+  width: 6px;
+  height: 33px;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.btn-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin: 7px 0 0 0;
+}
+
+.piano {
+  margin: 0 auto;
+  padding: 70px;
+  max-width: 1400px;
+  width: 100%;
+  background-color: #4d4d4d;
+  -webkit-border-radius: 10px 10px 10px 10px;
+          border-radius: 10px 10px 10px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  color: white;
+}
+
+.piano::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 30px;
+  height: 10px;
+  width: 90%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+.control-panel {
+  margin: 30px 0 30px 150px;
+  width: 300px;
+  height: 75px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.power-panel {
+  width: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.power-panel__icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  fill: #bdbdbd;
+  background-color: #4d4d4d;
+}
+
+.power-panel__btn_active {
+  background-color: #dfff7f;
+}
+
+.volume-panel {
+  width: 55px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.volume-panel__indicators {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.volume-panel__indicator {
+  border: 1px solid white;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  width: 6px;
+  height: 6px;
+}
+
+.volume-panel__indicator_active {
+  background-color: white;
+}
+
+.volume-panel__name {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+.volume-panel__icon {
+  display: block;
+  margin: 2px 0;
+  height: 3px;
+  background-color: white;
+}
+
+.samples-panel {
+  width: 120px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.samples-panel__name {
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}
+
+.samples-panel__samples-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.samples-panel__sample {
+  font-size: 12px;
+  margin: 0 5px;
+}
+
+.octave-panel {
+  width: 35px;
+}
+
+.octave-panel__buttons {
+  margin: 36px 0 0 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.octave-panel__btn {
+  position: relative;
+}
+
+.octave-panel__btn::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 40px;
+  left: 0;
+  color: white;
+  background-color: white;
+  height: 6px;
+  width: 6px;
+}
+
+#keypad {
+  height: 326px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.octave {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.key {
+  display: block;
+  width: 50px;
+  height: 326px;
+  border: 0.5px solid black;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.key::after {
+  content: '';
+  display: none;
+  position: absolute;
+  height: 100px;
+  width: 50px;
+  bottom: 0;
+  left: -0.5px;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#dfff7f));
+  background: -webkit-linear-gradient(white, #dfff7f);
+  background: -o-linear-gradient(white, #dfff7f);
+  background: linear-gradient(white, #dfff7f);
+  border-left: 0.5px solid black;
+  border-right: 0.5px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.key_pressed::after {
+  display: block;
+}
+
+.bkey {
+  background-color: #000;
+  height: 200px;
+  width: 30px;
+  position: relative;
+  left: -15px;
+}
+
+.bkey::after {
+  content: '';
+  display: none;
+  position: absolute;
+  height: 100px;
+  width: 30px;
+  top: 100px;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#dfff7f));
+  background: -webkit-linear-gradient(#000, #dfff7f);
+  background: -o-linear-gradient(#000, #dfff7f);
+  background: linear-gradient(#000, #dfff7f);
+}
+
+.bkey_pressed::after {
+  display: block;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Piano</title>
+</head>
+
+<body>
+
+  <div class="piano">
+    <div class="control-panel">
+      <div class="power-panel">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="power-panel__icon">
+          <path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256V32C224 14.33 238.3 0 256 0C273.7 0 288 14.33 288 32V256zM80 256C80 353.2 158.8 432 256 432C353.2 432 432 353.2 432 256C432 201.6 407.3 152.9 368.5 120.6C354.9 109.3 353 89.13 364.3 75.54C375.6 61.95 395.8 60.1 409.4 71.4C462.2 115.4 496 181.8 496 255.1C496 388.5 388.5 496 256 496C123.5 496 16 388.5 16 255.1C16 181.8 49.75 115.4 102.6 71.4C116.2 60.1 136.4 61.95 147.7 75.54C158.1 89.13 157.1 109.3 143.5 120.6C104.7 152.9 80 201.6 80 256z"/></svg>
+        <button class="btn power-panel__btn power-panel__btn_active"></button>
+      </div>
+      <div class="volume-panel">
+        <ul class="volume-panel__indicators">
+          <li class="volume-panel__indicator"></li>
+          <li class="volume-panel__indicator"></li>
+          <li class="volume-panel__indicator"></li>
+          <li class="volume-panel__indicator"></li>
+          <li class="volume-panel__indicator"></li>
+        </ul>
+        <h2 class="volume-panel__name">Volume</h2>
+        <span class="volume-panel__icon"></span>
+        <div class="btn-wrapper">
+          <button class="btn volume-panel__reduceVolumeBtn"></button>
+          <button class="btn volume-panel__addVolumeBtn"></button>
+        </div>
+      </div>
+      <div class="samples-panel">
+        <h2 class="samples-panel__name">Tone</h2>
+        <ul class="samples-panel__samples-list">
+          <li class="samples-panel__sample">Piano</li>
+          <li class="samples-panel__sample">E.Piano</li>
+          <li class="samples-panel__sample">Other</li>
+        </ul>
+        <div class="btn-wrapper">
+          <button class="btn"></button>
+          <button class="btn"></button>
+          <button class="btn"></button>
+        </div>
+      </div>
+      <div class="octave-panel">
+        <div class="octave-panel__buttons">
+          <button class="btn octave-panel__btn"></button>
+          <button class="btn octave-panel__btn"></button>
+        </div>
+      </div>
+    </div>
+    <div id="keypad">
+      <!-- 52 клавиши на ширину в 3000 пикселей -->
+    </div>
+  </div>
+
+  <!-- <script src="https://unpkg.com/vue@next"></script> -->
+  <script src="app.js"></script>
+</body>
+
+</html>

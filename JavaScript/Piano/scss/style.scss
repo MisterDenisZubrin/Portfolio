@@ -1,0 +1,231 @@
+$green: #dfff7f;
+$grey: #4d4d4d;
+$btnGrey: #bdbdbd;
+
+
+body {
+  margin: 0;
+}
+
+.btn {
+  background-color: $btnGrey;
+  outline: 1px solid #000;
+  width: 6px;
+  height: 33px;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 7px 0 0 0;
+  }
+}
+
+.piano {
+  margin: 0 auto;
+  padding: 70px;
+  max-width: 1400px;
+  width: 100%;
+  background-color: $grey;
+  border-radius: 10px 10px 10px 10px;
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 30px;
+    height: 10px;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: #000;
+  }
+}
+
+.control-panel {
+  margin: 30px 0 30px 150px;
+  width: 300px;
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.power-panel {
+  width: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    fill: #bdbdbd;
+    background-color: $grey;
+  }
+
+  &__btn {
+    &_active {
+      background-color: $green;
+    }
+  }
+}
+
+.volume-panel {
+  width: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__indicators {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  &__indicator {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+
+    &_active {
+      background-color: white;
+    }
+  }
+
+  &__name {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__icon {
+    display: block;
+    margin: 2px 0;
+    height: 3px;
+    background-color: white;
+  }
+}
+
+.samples-panel {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__name {
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  &__samples-list {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  &__sample {
+    font-size: 12px;
+    margin: 0 5px;
+  }
+}
+
+.octave-panel {
+  width: 35px;
+
+  &__buttons {
+    margin: 36px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__btn {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 40px;
+      left: 0;
+      color: white;
+      background-color: white;
+      height: 6px;
+      width: 6px;
+    }
+  }
+}
+
+#keypad {
+  height: 326px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.octave {
+  display: flex;
+}
+
+.key {
+  display: block;
+  width: 50px;
+  height: 326px;
+  border: 0.5px solid black;
+  background-color: white;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: none;
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    bottom: 0;
+    left: -0.5px;
+    background: linear-gradient(white, $green);
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+    box-sizing: border-box;
+  }
+
+  &_pressed::after {
+    display: block;
+  }
+}
+
+.bkey {
+  background-color: #000;
+  height: 200px;
+  width: 30px;
+  position: relative;
+  left: -15px;
+
+  &::after {
+    content: '';
+    display: none;
+    position: absolute;
+    height: 100px;
+    width: 30px;
+    top: 100px;
+    left: 0;
+    background: linear-gradient(#000, $green);
+  }
+
+  &_pressed::after {
+    display: block;
+  }
+}
