@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="calculator">
+      <input type="text" name="userNumber" id="input" v-model="result" placeholder="0">
+      <div class="buttons">
+        <button class="button digit" @click="input(num)" v-for="num in numbers">{{ num }}</button>
+      
+        <button class="button calculate-button" v-on:click="calc(firstNumber, result, currOperation)">=</button>
+        <button class="button reset-button" v-on:click="reset()">AC</button>
+      
+        <button class="button operation" v-on:click="input(op)" v-for="op in operations">{{ op }}</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="calculator.js"></script>
+
+</html>

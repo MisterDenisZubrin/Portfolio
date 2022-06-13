@@ -1,0 +1,47 @@
+.calculator {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  outline: 1px solid gray;
+}
+
+.button {
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100px;
+  height: 50px;
+  color: white;
+}
+
+.digit {
+  background-color: cornflowerblue;
+}
+
+.operation {
+  background-color: orange;
+}
+
+.calculate-button,
+.reset-button {
+  background-color: hotpink;
+}
+
+#input {
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: right;
+}
+
+.buttons,
+.operations,
+.console-buttons {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
