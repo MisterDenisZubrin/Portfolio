@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таблица цветов</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <color-table></color-table>
+    <color-picker>
+      <h2 class="window-name" slot="windowName">Добавление цвета</h2>
+    </color-picker>
+    <color-picker id="changeWindow">
+      <h2 class="window-name" slot="windowName">Изменить запись</h2>
+    </color-picker>
+  </div>
+  <script src="./js/jscolor.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>
