@@ -1,0 +1,55 @@
+{
+  "name": "finalproject",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-jest": "27.0",
+    "jest": "27.0",
+    "vue": "^3.2.13",
+    "vue-loader": "^16.0.0-rc.1",
+    "vue-router": "^4.0.3",
+    "vue3-jest": "^27.0.0-alpha.1",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "@testing-library/vue": "^6.6.1",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/compiler-sfc": "^3.2.40",
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue3-jest",
+      "^.+\\js$": "babel-jest"
+    },
+    
+    "testEnvironment": "jsdom",
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**",
+      "!coverage/**"
+    ]
+  }
+}
