@@ -1,0 +1,26 @@
+@import 'styles/styles.module.scss'; 
+
+.App {
+  min-height: 100vh;
+  padding: 85px 0;
+  margin: 0 auto;
+}
+
+.light {
+  background-color: white;
+}
+
+.dark {
+  background-color: $darkthemeBackground;
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .App {
+    padding: 40px 0;
+  }
+}
+@media screen and (max-width: 376px) {
+  .App {
+    padding: 0;
+  }
+}

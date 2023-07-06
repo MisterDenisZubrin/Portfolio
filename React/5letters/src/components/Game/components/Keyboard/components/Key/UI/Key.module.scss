@@ -1,0 +1,117 @@
+@import 'styles/styles.module.scss';
+
+.key {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'roboto_semibold', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+  transition: 0.15s;
+
+  &.light {
+    background-color: $lightthemeKeyNotpressed;
+    color: #56575e;
+    &:hover {
+      transform: scale(1.1);
+      color: #56575e;
+    }
+  }
+  &.dark {
+    background-color: $darkthemeKeyNotpressed;
+    color: white;
+    &:hover {
+      transform: scale(1.1);
+      color: white;
+    }
+  }
+
+  &_correct {
+    &.light {
+      background-color: $lightthemeKeyCorrect;
+      color: white;
+    }
+    &.dark {
+      background-color: $darkthemeCorrect;
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &_incorrect {
+    &.light {
+      background-color: $lightthemeKeyIncorrect;
+      color: white;
+    }
+    &.dark {
+      color: white;
+      background-color: $darkthemeKeyIncorrect;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.enterKey {
+  flex-grow: 1;
+  min-width: 72px;
+  max-width: 108px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.backspaceKey {
+  flex-grow: 1;
+  min-width: 72px;
+  max-width: 108px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.light {
+    fill: #56575e;
+    &:hover {
+      fill: #56575e;
+    }
+  }
+
+  &.dark {
+    fill: white;
+    &:hover {
+      fill: white;
+    }
+  }
+}
+
+.correct {
+  background-color: $lightthemeKeyCorrect;
+}
+
+.incorrect {
+  background-color: $lightthemeKeyIncorrect;
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .key {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9em;
+  }
+  .enterKey,
+  .backspaceKey {
+    min-width: 50px;
+    max-width: 75px;
+  }
+}

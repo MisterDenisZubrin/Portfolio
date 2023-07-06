@@ -1,0 +1,124 @@
+@import 'styles/styles.module.scss';
+
+.keyboard {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1024px;
+  min-width: 638px;
+  margin: 0 auto;
+  padding: 33px 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  &.light {
+    background-color: inherit;
+  }
+
+  &.dark {
+    background-color: $darkthemeHeader;
+  }
+
+  &__mobile {
+    display: none;
+    font-size: 22px;
+    font-family: 'roboto_bold', sans-serif;
+    font-weight: 600;
+    outline: none;
+    border: 2px solid $lightthemeSlot;
+    color: #818181;
+    width: 200px;
+    margin: 30px auto;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: inherit;
+
+    &.light {
+      border: 1px solid black;
+      color: black;
+    }
+
+    &.dark {
+      border: 1px solid white;
+      color: white;
+    }
+  }
+
+  &__mobileBtn {
+    margin: 0 auto;
+    display: none;
+    border: 2px solid $lightthemeSlot;
+    border-radius: 15px;
+    font-size: 22px;
+    font-family: 'roboto', sans-serif;
+    font-weight: 400;
+    background-color: inherit;
+    color: #818181;
+    padding: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.15s;
+
+    &.light {
+      border: 1px solid black;
+      color: black;
+    }
+
+    &.dark {
+      border: 1px solid white;
+      color: white;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 10px;
+
+  &:nth-child(1) {
+    margin: 0 25px 10px;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .keyboard {
+    padding: 24px 4px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .keyboard {
+    padding: 12px 5px 0;
+    justify-content: space-between;
+    min-width: 0;
+    display: none;
+
+    &__mobile {
+      display: block;
+    }
+
+    &__mobileBtn {
+      display: block;
+    }
+  }
+
+  .row {
+    margin: 5px 0;
+    gap: 5px;
+    justify-content: space-between;
+
+    &:nth-child(1) {
+      margin: 0;
+    }
+  }
+}

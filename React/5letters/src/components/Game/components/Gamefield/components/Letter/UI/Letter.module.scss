@@ -1,0 +1,52 @@
+@import 'styles/styles.module.scss';
+
+.slot {
+  width: 75px;
+  height: 75px;
+  border-radius: 5px;
+  background-color: $lightthemeSlot;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.letter {
+  background-color: $lightthemeLetter;
+
+  &_correct {
+    background-color: $lightthemeLetterCorrect;
+  }
+
+  &_incorrect {
+    background-color: $lightthemeLetterIncorrect;
+  }
+
+  &_outofplace {
+    background-color: $lightthemeLetterOutofplace;
+  }
+}
+.text {
+  margin: 0;
+  color: #fff;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: 'roboto__bold', sans-serif;
+  font-weight: 600;
+  user-select: none;
+}
+
+@media screen  and (max-width: 535px) {
+  .slot {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .slot {
+    width: 50px;
+    height: 50px;
+  }
+}

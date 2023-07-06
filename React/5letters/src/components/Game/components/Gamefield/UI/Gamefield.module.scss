@@ -1,0 +1,31 @@
+.gamefield {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 11px;
+  margin: 0 auto 54px;
+  max-width: 419px;
+  width: 100%;
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .gamefield {
+    margin: 0 auto 24px;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 535px) {
+  .gamefield {
+    margin: 0 0 24px 60px;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .gamefield {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 300px;
+  }
+}

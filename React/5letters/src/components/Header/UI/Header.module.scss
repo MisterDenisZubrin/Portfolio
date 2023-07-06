@@ -1,0 +1,128 @@
+@import 'styles/styles.module.scss';
+
+.header {
+  max-width: 638px;
+  width: 100%;
+  margin: 0 auto 85px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.light {
+    background-color: $lightthemeHeader;
+  }
+  &.dark {
+    background-color: $darkthemeHeader;
+  }
+}
+
+.text {
+  margin: 18px 45px;
+  text-align: center;
+  font-family: 'roboto_semibold', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.075em;
+
+  &.light {
+    color: #202537;
+  }
+
+  &.dark {
+    color: #DADCE0; 
+  }
+}
+
+.button {
+  font-family: 'roboto_bold', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.light {
+    background-color: $lightthemeIconBg;
+  }
+  &.dark {
+    background-color: $darkthemeIconBg;
+  }
+}
+
+.icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.15s;
+
+  &.light {
+    fill: $lightthemeIcon;
+  }
+
+  &.dark {
+    fill: $darkthemeIcon;
+  }
+
+  &_flag1 {
+    fill: #ffffff;
+  }
+  &_flag2 {
+    fill: #0039a6;
+  }
+  &_flag3 {
+    fill: #d52b1e;
+  }
+  &_stroke {
+    fill: none;
+    stroke: #cccccc;
+    stroke-width: 0.1199;
+    stroke-miterlimit: 2.6131;
+  }
+  &_usflag0 {
+    fill: #b22234;
+  }
+  &_usflag1 {
+    fill: #ffffff;
+  }
+  &_usflag2 {
+    fill: #3c3b6e;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .header {
+    margin: 0 auto 36px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 50px;
+    flex-direction: column;
+  }
+  .text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .header {
+    width: 100%;
+    margin: 0 auto 24px;
+    padding: 0;
+    border-radius: 0;
+    background-color: $lightthemeIconBg;
+  }
+  .text {
+    display: none;
+  }
+}
