@@ -1,6 +1,6 @@
 # project
 
-> A Vue.js project
+> Проект на Vue 2, собран на vite, последние изменения из ветки fix
 
 ## Build Setup
 
